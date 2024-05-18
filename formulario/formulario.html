@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario persona</title>
+</head>
+<body>
+    <h2>Formulario persona</h2>
+    <form action="crear_persona.php" method="post">
+    <label for="cedula">Cedula: </label><br>
+    <input type="text" id="cedula" name="cedula" required><br>
+    <label for="nombre">Nombre: </label><br>
+    <input type="text" id="nombre" name="nombre" required><br>
+    <label for="apellido">Apellido: </label><br>
+    <input type="text" id="apellido" name="apellido" required><br>
+    <label for="fecha_nacimiento">Fecha de Nacimiento: </label><br>
+    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br><br>
+    <input type="submit" value="enviar">
+    </form>
+</body>
+</html>

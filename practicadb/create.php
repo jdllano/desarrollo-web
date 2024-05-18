@@ -8,5 +8,5 @@ if(mysqli_query($conexion, $sql)){
 }else{
     echo "Error". mysqli_connect_error ();
 }
-    
+mysqli_close($conexion) ;
 ?>
