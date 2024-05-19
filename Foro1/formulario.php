@@ -12,6 +12,12 @@ require 'conexion.php';
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body class="body">
+    <script>
+        function eliminar(){
+            var respuesta = confirm("¿Estas seguro que deseas eliminar al usuario?");
+            return respuesta
+        }
+    </script>
     <figure class="text-center">
         <blockquote class="blockquote">
             <h1>FORMULARIO USUARIOS</h1>
@@ -20,6 +26,9 @@ require 'conexion.php';
             By <cite title="Source Title">Jimmy Llano</cite>
         </figcaption>
     </figure>
+    <?php
+    include "eliminar.php";
+    ?>
     <div class= "container-fluid row">
         <form class="col-3 p-3"   method="post">
                         
@@ -87,8 +96,8 @@ require 'conexion.php';
                         <td><?php echo $datos->fecha_registro?></td>
                         <td>
                             <figure >
-                                <a href="" class="bnt btn-small btn btn-warning" id="editar" title="Editar" tooltip-dir="top"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="" class="bnt btn-small btn btn-danger" id="editar" title="Eliminar" tooltip-dir="top"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <a href="editar.php?id=<?=$datos->cedula?>" class="bnt btn-small btn btn-warning"  title="Editar" tooltip-dir="top"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a onclick="return eliminar()" href="formulario.php?id=<?=$datos->cedula?>" class="bnt btn-small btn btn-danger" id="editar" title="Eliminar" tooltip-dir="top"><i class="fa fa-trash" aria-hidden="true"></i></a>
                             </figure>
                         </td>                                    
                     </tr>
