@@ -6,13 +6,13 @@ $password = 'Patrullero.61';
 $database = 'foro1';
 
 // conexion 
-$conexion = mysqli_connect($serverName,$userName,$password,$database);
-
+$conexion= mysqli_connect($serverName,$userName,$password,$database);
+ 
 // comprobar 
 if(!$conexion){
     die("Conexion Fallida:  " . mysqli_connect_error());
 }
 else
-    echo "Conexion Exitosa". "<br>";
+    "". "<br>";
 
 ?>

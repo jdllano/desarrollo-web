@@ -1,0 +1,69 @@
+.body{
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    align-items: center;
+    background-color: mediumaquamarine ;
+    background-size: cover;
+    background-position: center;
+
+}
+
+// We deliberately hardcode the `bs-` prefix because we check
+// this custom property in JS to determine Popper's positioning
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .dropdown-menu#{$infix}-start {
+      --bs-position: start;
+
+      &[data-bs-popper] {
+        right: auto;
+        left: 0;
+      }
+    }
+
+    .dropdown-menu#{$infix}-end {
+      --bs-position: end;
+
+      &[data-bs-popper] {
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+}
+
+figure[tooltip-dir="left"]:after {
+    border-radius: 100%;
+    display: block;
+    background-color: green;
+    left: auto;
+    right: 110%;
+  }
+  
+  figure[tooltip-dir="bottom"]:after,
+  figure[tooltip-dir="top"]:after {
+    left: 50%;
+      right: auto;
+  
+    transform: translateX(-50%);
+  }
+  
+  figure[tooltip-dir="bottom"]:after {
+    bottom: auto;
+    top: 110%;
+  }
+  
+  figure[tooltip-dir="top"]:after {
+    bottom: 110%;
+    top: auto;
+  }
+  
+  figure:hover:after {
+    opacity: 1;
+    visibility: visible;
+  }
+ 
